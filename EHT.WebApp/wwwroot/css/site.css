@@ -1,6 +1,22 @@
-﻿body {
+﻿html {
+    /*background: url("/images/bg01.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+    font-size:100px;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: url("/images/bg01.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    color:#ffffff;
 }
 
 /* Wrapping element */
@@ -48,3 +64,5 @@ textarea {
         display: none;
     }
 }
+
+
