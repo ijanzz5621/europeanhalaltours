@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using EHT.WebApp.Data;
 using EHT.WebApp.Models;
 using EHT.WebApp.Services;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace EHT.WebApp
 {
@@ -73,8 +74,12 @@ namespace EHT.WebApp
 
             app.UseStaticFiles();
 
-            app.UseIdentity();
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
+            app.UseIdentity();
             // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
             app.UseMvc(routes =>
