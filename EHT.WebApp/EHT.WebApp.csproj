@@ -9,13 +9,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <UserSecretsId>aspnet-EHT.WebApp-fba4c4f9-7e61-4356-873c-5e22620ab546</UserSecretsId>
-    
+    <UserSecretsId>aspnet-EHT.WebApp-fba4c4f9-7e61-4356-873c-5e22620ab546</UserSecretsId>    
   </PropertyGroup>
 
   <ItemGroup>
     <Content Include="wwwroot\images\bg01.jpg" />
   </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
