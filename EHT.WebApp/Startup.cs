@@ -73,6 +73,12 @@ namespace EHT.WebApp
             }
 
             app.UseStaticFiles();
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //Path.Combine(Directory.GetCurrentDirectory(), @"images")),
+            //    RequestPath = new PathString("/images")
+            //});
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
