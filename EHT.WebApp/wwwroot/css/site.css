@@ -10,20 +10,24 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background: url(/images/bg01.jpg) no-repeat center center fixed;
+    /*background: url(/images/bg01.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-    color:#ffffff;
+    color:#ffffff;*/
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+}
+
+.container-full {
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
