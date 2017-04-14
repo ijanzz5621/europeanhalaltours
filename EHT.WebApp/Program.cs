@@ -17,6 +17,7 @@ namespace EHT.WebApp
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
+                .UseUrls("http://*:80")
                 .Build();
 
             host.Run();
