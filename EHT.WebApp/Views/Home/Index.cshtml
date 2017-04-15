@@ -17,6 +17,70 @@
              data-top-bottom="background-position: 50% -100px;"
              data-anchor-target="#slide-1">
             <div class="hsContainer">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active" style="height:500px; overflow:hidden;">
+                            <img src="~/images/img001.jpg" alt="ASP.NET" class="img-responsive" style="width:100%;" />
+                            @*<div class="carousel-caption" role="option">
+                                <p>
+                                    Learn how to build ASP.NET apps that can run anywhere.
+                                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
+                                        Learn More
+                                    </a>
+                                </p>
+                            </div>*@
+                        </div>
+                        <div class="item" style="height:500px; overflow:hidden;">
+                            <img src="~/images/img002.jpg" alt="Visual Studio" class="img-responsive" style="width:100%;" />
+                            @*<div class="carousel-caption" role="option">
+                                <p>
+                                    There are powerful new features in Visual Studio for building modern web apps.
+                                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
+                                        Learn More
+                                    </a>
+                                </p>
+                            </div>*@
+                        </div>
+                        <div class="item" style="height:500px; overflow:hidden;">
+                            <img src="~/images/img003.jpg" alt="Package Management" class="img-responsive" style="width:100%;" />
+                            @*<div class="carousel-caption" role="option">
+                                <p>
+                                    Bring in libraries from NuGet, Bower, and npm, and automate tasks using Grunt or Gulp.
+                                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
+                                        Learn More
+                                    </a>
+                                </p>
+                            </div>*@
+                        </div>
+                        <div class="item" style="height:500px; overflow:hidden;">
+                            <img src="~/images/img004.jpg" alt="Microsoft Azure" class="img-responsive" style="width:100%;" />
+                            @*<div class="carousel-caption" role="option">
+                                <p>
+                                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
+                                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
+                                        Learn More
+                                    </a>
+                                </p>
+                            </div>*@
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
                 <div class="hsContent"
                      data-center="bottom: 200px; opacity: 1"
                      data-top="bottom: 1200px; opacity: 0"
