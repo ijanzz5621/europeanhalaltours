@@ -1,8 +1,10 @@
-$(document).ready(function(){        
-	$('li img').on('click',function(){
+$(document).ready(function () {     
+    
+    $('li img').on('click', function () {
+        
 		var src = $(this).attr('src');
 		var img = '<img src="' + src + '" class="img-responsive"/>';
-		
+
 		//start of new code new code
 		var index = $(this).parent('li').index();   
 		
@@ -21,10 +23,7 @@ $(document).ready(function(){
 		})
 		$('#myModal').on('hidden.bs.modal', function(){
 			$('#myModal .modal-body').html('');
-		});
-		
-		
-		
+		});	
 		
    });	
 })

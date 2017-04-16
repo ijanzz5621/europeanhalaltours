@@ -13,12 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\css\blueimp\blueimp-gallery-indicator.css" />
-    <Content Include="wwwroot\css\blueimp\blueimp-gallery-video.css" />
-    <Content Include="wwwroot\css\blueimp\blueimp-gallery.css" />
-    <Content Include="wwwroot\css\blueimp\blueimp-gallery.min.css" />
-    <Content Include="wwwroot\css\blueimp\blueimp-gallery.min.css.map" />
-    <Content Include="wwwroot\css\blueimp\demo\demo.css" />
+    <Content Include="wwwroot\css\image-gallery.css" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,10 +39,6 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\images\blueimp\" />
-    <Folder Include="wwwroot\js\blueimp\" />
   </ItemGroup>
 
 </Project>
