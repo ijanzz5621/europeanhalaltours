@@ -13,6 +13,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\blueimp\blueimp-gallery-indicator.css" />
+    <Content Include="wwwroot\css\blueimp\blueimp-gallery-video.css" />
+    <Content Include="wwwroot\css\blueimp\blueimp-gallery.css" />
+    <Content Include="wwwroot\css\blueimp\blueimp-gallery.min.css" />
+    <Content Include="wwwroot\css\blueimp\blueimp-gallery.min.css.map" />
+    <Content Include="wwwroot\css\blueimp\demo\demo.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.1" />
@@ -37,7 +46,6 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\css\blueimp\" />
     <Folder Include="wwwroot\images\blueimp\" />
     <Folder Include="wwwroot\js\blueimp\" />
   </ItemGroup>

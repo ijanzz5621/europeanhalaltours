@@ -4,7 +4,10 @@
 
 }
 
-
+@*<link rel="stylesheet" href="css/blueimp/blueimp-gallery.css">
+<link rel="stylesheet" href="css/blueimp/blueimp-gallery-indicator.css">
+<link rel="stylesheet" href="css/blueimp/blueimp-gallery-video.css">
+<link rel="stylesheet" href="css/blueimp/demo/demo.css">*@
 
 <div id="pageContent" style="padding-left:10px;">
 
@@ -12,10 +15,64 @@
 
     <p>Under construction. Please come back later.</p>
 
+    @*<div id="links" class="links"></div>
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>*@
+
+    <ul class="row">
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+            <img class="img-responsive" src="~/images/gallery/img001.jpg">
+        </li>
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+            <img class="img-responsive" src="~/images/gallery/img002.jpg">
+        </li>
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+            <img class="img-responsive" src="~/images/gallery/img003.jpg">
+        </li>
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+            <img class="img-responsive" src="~/images/gallery/img004.jpg">
+        </li>
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+            <img class="img-responsive" src="~/images/gallery/img005.jpg">
+        </li>
+        <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+            <img class="img-responsive" src="~/images/gallery/img006.jpg">
+        </li>
+    </ul>
+
+
 </div>
+
+<div class="modal fade" id='my<a href="http://www.jqueryscript.net/tags.php?/Modal/">Modal</a>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body"> </div>
+        </div>
+    </div>
+</div>
+
 
 @section Scripts {
     
+    @*<script src="js/blueimp/blueimp-helper.js"></script>
+    <script src="js/blueimp/blueimp-gallery.js"></script>
+    <script src="js/blueimp/blueimp-gallery-fullscreen.js"></script>
+    <script src="js/blueimp/blueimp-gallery-indicator.js"></script>
+    <script src="js/blueimp/blueimp-gallery-video.js"></script>
+    <script src="js/blueimp/blueimp-gallery-vimeo.js"></script>
+    <script src="js/blueimp/blueimp-gallery-youtube.js"></script>
+    <script src="js/blueimp/jquery.blueimp-gallery.js"></script>
+    <script src="js/blueimp/demo/demo.js"></script>*@
+
+    <script src="~/js/photo-gallery.js"></script>
+
 }
 
 

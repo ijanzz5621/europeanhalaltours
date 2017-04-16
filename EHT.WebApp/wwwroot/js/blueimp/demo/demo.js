@@ -25,6 +25,9 @@ $(function () {
     dataType: 'jsonp',
     jsonp: 'jsoncallback'
   }).done(function (result) {
+
+      alert(result.photos.photo[1].farm);
+
     var carouselLinks = []
     var linksContainer = $('#links')
     var baseUrl

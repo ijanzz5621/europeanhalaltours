@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
  * blueimp Gallery Video Factory CSS
  * https://github.com/blueimp/Gallery
@@ -43,16 +43,16 @@
   top: 0;
 }
 .blueimp-gallery > .slides > .slide > .video-content > a {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: 0;
-  margin: -64px auto 0;
-  width: 128px;
-  height: 128px;
-  background: url(../img/video-play.png) center no-repeat;
-  opacity: 0.8;
-  cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    margin: -64px auto 0;
+    width: 128px;
+    height: 128px;
+    background: url(/images/video-play.png) center no-repeat;
+    opacity: 0.8;
+    cursor: pointer;
 }
 .blueimp-gallery > .slides > .slide > .video-content > a:hover {
   opacity: 1;
@@ -68,13 +68,13 @@
   display: block;
 }
 .blueimp-gallery > .slides > .slide > .video-loading > a {
-  background: url(../img/loading.gif) center no-repeat;
-  background-size: 64px 64px;
+    background: url(/images/loading.gif) center no-repeat;
+    background-size: 64px 64px;
 }
 
 /* Replace PNGs with SVGs for capable browsers (excluding IE<9) */
 body:last-child .blueimp-gallery > .slides > .slide > .video-content:not(.video-loading) > a {
-  background-image: url(../img/video-play.svg);
+    background-image: url(/images/video-play.svg);
 }
 
 /* IE7 fixes */
