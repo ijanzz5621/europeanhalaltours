@@ -32,7 +32,7 @@ namespace EHT.WebApp.Controllers
             //client.Send(msg);
 
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Sharizan", "admin@eht.com"));
+            message.From.Add(new MailboxAddress("Sharizan", "eht@ijglobaltech.com"));
             message.To.Add(new MailboxAddress("Sharizan", "sharizan.mohdredzuan@microchip.com"));
             message.Subject = "Hello World - A mail from Go Daddy!!";
             //message.Body = new TextPart("plain")
@@ -46,10 +46,11 @@ namespace EHT.WebApp.Controllers
 
             using (var client = new SmtpClient())
             {                
-                client.Connect("n1smtpout.europe.secureserver.net", 25, false);
-                client.Authenticate("admin@ijglobaltech.com", "1j@nPHT6420");
+                client.Connect("n1smtpout.europe.secureserver.net", 25, false);                
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
-                // Note: since we don't have an OAuth2 token, disable 	// the XOAUTH2 authentication mechanism.     client.Authenticate("anuraj.p@example.com", "password");
+                // Note: since we don't have an OAuth2 token, disable 	
+                // the XOAUTH2 authentication mechanism.     
+                client.Authenticate("eht@ijglobaltech.com", "1j@nPHT6420");
                 client.Send(message);
                 client.Disconnect(true);
             }
