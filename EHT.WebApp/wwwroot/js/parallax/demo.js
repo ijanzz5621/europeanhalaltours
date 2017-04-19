@@ -1,5 +1,5 @@
 (function(){
-
+    
   var parallax = document.querySelectorAll(".parallax"),
       speed = 0.5;
 
