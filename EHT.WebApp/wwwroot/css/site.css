@@ -5,15 +5,14 @@
     -o-background-size: cover;
     background-size: cover;*/
     font-size:100px;
+    background-color:#222222;
 }
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
     
-    background: #222222 url(/images/logo.jpg) no-repeat center center fixed;
-
-    background-color:#222222;
+    background: url(/images/logo.jpg) no-repeat center center fixed;
 
     /*-webkit-background-size: cover;
     -moz-background-size: cover;
@@ -28,7 +27,6 @@ body {
 .body-content {
     /*padding-left: 15px;
     padding-right: 15px;*/
-    background: #222222;
 }
 
 .container-full {
