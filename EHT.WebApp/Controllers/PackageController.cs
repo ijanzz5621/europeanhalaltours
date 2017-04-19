@@ -17,5 +17,11 @@ namespace EHT.WebApp.Controllers
         {
             return View();
         }
+
+        public IActionResult PackageDetails()
+        {
+
+            return View();
+        }
     }
 }
