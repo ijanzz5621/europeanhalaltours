@@ -10,7 +10,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background: url(/images/logo.jpg) no-repeat center center fixed;
+    background: #222222 url(/images/logo.jpg) no-repeat center center fixed;
     /*-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
