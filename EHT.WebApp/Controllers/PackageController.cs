@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace EHT.WebApp.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class PackageController : Controller
     {
         // GET: /<controller>/
