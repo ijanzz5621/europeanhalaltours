@@ -32,8 +32,8 @@ namespace EHT.WebApp.Controllers
             //client.Send(msg);
 
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Sharizan", "eht@ijglobaltech.com"));
-            message.To.Add(new MailboxAddress("Sharizan", "sharizan.mohdredzuan@microchip.com"));
+            message.From.Add(new MailboxAddress("Sharizan", "admin@europeanhalaltour.com"));
+            message.To.Add(new MailboxAddress("Sharizan", "sharizan_81@yahoo.com"));
             message.Subject = "Hello World - A mail from Go Daddy!!";
             //message.Body = new TextPart("plain")
             //{
