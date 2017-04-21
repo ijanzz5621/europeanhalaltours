@@ -45,9 +45,8 @@ namespace EHT.WebApp.Controllers
             message.Body = bodyBuilder.ToMessageBody();
 
             using (var client = new SmtpClient())
-            {
-                //client.Connect("n1smtpout.europe.secureserver.net", 25, false);                
-                client.Connect("europeanhalaltour.com", 25, false);
+            {             
+                client.Connect("n1smtpout.europe.secureserver.net", 25, false);
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
                 // Note: since we don't have an OAuth2 token, disable 	
                 // the XOAUTH2 authentication mechanism.     
