@@ -46,7 +46,9 @@ namespace EHT.WebApp
             services.AddDbContext<DatabaseDbContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("MySQLConnectionData")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(config => {
+                config.SignIn.RequireConfirmedEmail = true;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
