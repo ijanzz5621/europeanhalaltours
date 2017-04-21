@@ -96,6 +96,7 @@ namespace EHT.WebApp.Controllers
         // GET: /Account/Register
         [HttpGet]
         [AllowAnonymous]
+        [Authorize]
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
