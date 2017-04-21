@@ -12,6 +12,7 @@ using Microsoft.Extensions.Options;
 using EHT.WebApp.Models;
 using EHT.WebApp.Models.AccountViewModels;
 using EHT.WebApp.Services;
+using EHT.WebApp.Functions;
 
 namespace EHT.WebApp.Controllers
 {
@@ -281,8 +282,19 @@ namespace EHT.WebApp.Controllers
                 // Send an email with this link
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.Action(nameof(ResetPassword), "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                await _emailSender.SendEmailAsync(model.Email, "Reset Password",
-                   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+                //await _emailSender.SendEmailAsync(model.Email, "Reset Password",
+                //   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+
+                clsFnEmail funcEmail = new clsFnEmail(
+                    "EuropeanHalalTour Admin", 
+                    "donotreply@europeanhalaltour.com", 
+                    user.Id, 
+                    user.Email, 
+                    "Reset Password",
+                    $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>"
+                );
+                await funcEmail.SendEmail();
+
                 return View("ForgotPasswordConfirmation");
             }
 
