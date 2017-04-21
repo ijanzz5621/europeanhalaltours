@@ -50,7 +50,7 @@ namespace EHT.WebApp.Controllers
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
                 // Note: since we don't have an OAuth2 token, disable 	
                 // the XOAUTH2 authentication mechanism.     
-                client.Authenticate("eht@ijglobaltech.com", "1j@nPHT6420");
+                //client.Authenticate("eht@ijglobaltech.com", "1j@nPHT6420");
                 client.Send(message);
                 client.Disconnect(true);
             }
