@@ -5,13 +5,13 @@
     -o-background-size: cover;
     background-size: cover;*/
     font-size:100px;
-    background-color:#222222;
+    /*background-color:#222222;*/
 }
 
 body {
     
     
-    background: url(/images/logo.jpg) no-repeat center center fixed;
+    background: url(/images/logo.jpg) #222222 no-repeat center center fixed;
 
     /*-webkit-background-size: cover;
     -moz-background-size: cover;
@@ -71,5 +71,10 @@ textarea {
         display: none;
     }
 }
+
+a, a.hover {
+    color: #ffd800;
+}
+
 
 

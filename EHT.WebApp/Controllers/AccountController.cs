@@ -499,6 +499,14 @@ namespace EHT.WebApp.Controllers
             return View();
         }
 
+        // GET: /Account/ResetPasswordConfirmation
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult RequestForAccount()
+        {
+            return View();
+        }
+
         #region Helpers
 
         private void AddErrors(IdentityResult result)
