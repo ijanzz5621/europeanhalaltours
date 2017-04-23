@@ -537,7 +537,7 @@ namespace EHT.WebApp.Controllers
                     "EuropeanHalalTour Admin",
                     "register@europeanhalaltour.com",
                     "EuropeanHalalTour Registration",
-                    "admin@europeanhalaltour.com;info@europeanhalaltour.com;sales@europeanhalaltour.com;sharizan_81@yahoo.com",
+                    "admin@europeanhalaltour.com;info@europeanhalaltour.com;sales@europeanhalaltour.com;sharizan_81@yahoo.com;sales.ehtours@gmail.com",
                     "Registration Detected",
                     $"'{ model.Name }' has registered with European Halal Tour. Please contact him/her asap. <br/><br/> Email: '{ model.Email }' <br/> Phone No: '{ model.PhoneNumber }' "
                 );
