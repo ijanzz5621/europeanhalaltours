@@ -516,7 +516,7 @@ namespace EHT.WebApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public IActionResult RequestForAccount(RequestAccountModel model)
+        public async Task<IActionResult> RequestForAccount(RequestAccountModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -531,6 +531,17 @@ namespace EHT.WebApp.Controllers
 
             _context.Companies.Add(info);
             _context.SaveChanges();
+
+            //Send email to alert the registration
+            clsFnEmail funcEmail = new clsFnEmail(
+                    "EuropeanHalalTour Admin",
+                    "register@europeanhalaltour.com",
+                    "EuropeanHalalTour Registration",
+                    "admin@europeanhalaltour.com;info@europeanhalaltour.com;sales@europeanhalaltour.com;sharizan_81@yahoo.com",
+                    "Registration Detected",
+                    $"'{ model.Name }' has registered with European Halal Tour. Please contact him/her asap. <br/><br/> Email: '{ model.Email }' <br/> Phone No: '{ model.PhoneNumber }' "
+                );
+            await funcEmail.SendEmail();
 
             return View("~/Views/Account/RequestForAccountConfirmation.cshtml");
         }
