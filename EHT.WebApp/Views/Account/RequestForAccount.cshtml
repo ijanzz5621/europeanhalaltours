@@ -10,10 +10,15 @@
 
     <form asp-controller="Account" asp-action="RequestForAccount" method="post" class="form-horizontal">
 
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <br />
+
         <div class="form-group">
             <label for="Name" class="control-label col-xs-2">Name</label>
             <div class="col-xs-10">
                 <input type="text" class="form-control" id="Name" placeholder="Your Name" asp-for="Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
         </div>
 
@@ -21,6 +26,7 @@
             <label for="Email" class="control-label col-xs-2">Email</label>
             <div class="col-xs-10">
                 <input type="email" class="form-control" id="Email" placeholder="Company Email" asp-for="Email">
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
         </div>
 
@@ -28,6 +34,7 @@
             <label for="PhoneNumber" class="control-label col-xs-2">Contact No</label>
             <div class="col-xs-10">
                 <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number" asp-for="PhoneNumber">
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
         </div>
 

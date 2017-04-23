@@ -1,0 +1,8 @@
+﻿1. To add migartion, open cmd, go to project main folder (must contain the appsettings.json):
+   
+   dotnet ef migrations add "AddNewColumn" -c DatabaseDbContext
+
+2. To apply update of database changes
+
+   dotnet ef database update
+
