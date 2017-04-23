@@ -210,6 +210,7 @@ main {
 #slide-3 .bcg {background-image:url('/images/bcg_slide-3.jpg')}
 #slide-3 .hsContent {
 	margin-left: -239px;
+    top: 180px;
 }
 	#slide-3 h2 {
 		color: #f2ead6;
@@ -224,7 +225,7 @@ main {
 #slide-4 .hsContent {
     margin-left: -450px;
     position: fixed;
-    top: 250px;
+    top: 180px;
 }
 
 #slide-4 h2 {
