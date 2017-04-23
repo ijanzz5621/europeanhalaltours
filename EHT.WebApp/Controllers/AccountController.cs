@@ -13,6 +13,8 @@ using EHT.WebApp.Models;
 using EHT.WebApp.Models.AccountViewModels;
 using EHT.WebApp.Services;
 using EHT.WebApp.Functions;
+using EHT.WebApp.Models.Database;
+using EHT.WebApp.Data;
 
 namespace EHT.WebApp.Controllers
 {
@@ -26,13 +28,16 @@ namespace EHT.WebApp.Controllers
         private readonly ILogger _logger;
         private readonly string _externalCookieScheme;
 
+        private readonly DatabaseDbContext _context;
+
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IOptions<IdentityCookieOptions> identityCookieOptions,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            DatabaseDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -40,6 +45,7 @@ namespace EHT.WebApp.Controllers
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+            _context = context;
         }
 
         //
@@ -505,6 +511,28 @@ namespace EHT.WebApp.Controllers
         public IActionResult RequestForAccount()
         {
             return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public IActionResult RequestForAccount(RequestAccountModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            //Save to database
+            Company info = new Company();
+            info.Name = model.Name;
+            info.Email = model.Email;
+            info.PhoneNumber = model.PhoneNumber;
+
+            _context.Companies.Add(info);
+            _context.SaveChanges();
+
+            return View("~/Views/Account/RequestForAccountConfirmation.cshtml");
         }
 
         #region Helpers

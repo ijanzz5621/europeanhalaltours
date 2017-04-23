@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EHT.WebApp.Models.Database
+namespace EHT.WebApp.Models
 {
-    public class Company
+    public class RequestAccountModel
     {
         public int ID { get; set; }
         public string Name { get; set; }
