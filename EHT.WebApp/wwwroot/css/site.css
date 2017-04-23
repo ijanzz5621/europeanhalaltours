@@ -4,14 +4,14 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;*/
-    font-size:100px;
-    /*background-color:#222222;*/
+    font-size: 100px;
+    background: url(/images/logo.jpg) #232323 no-repeat center center fixed;
 }
 
 body {
     
     
-    background: url(/images/logo.jpg) #222222 no-repeat center center fixed;
+    
 
     /*-webkit-background-size: cover;
     -moz-background-size: cover;
