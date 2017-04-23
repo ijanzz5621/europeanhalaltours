@@ -34,7 +34,20 @@ namespace EHT.WebApp.Functions
                 var emailMessage = new MimeMessage();
 
                 emailMessage.From.Add(new MailboxAddress(FromName, FromEmail));
-                emailMessage.To.Add(new MailboxAddress(ToName, ToEmail));
+
+                if (ToEmail.Contains(';'))
+                {
+                    string[] emails = ToEmail.Split(';');
+                    foreach (string email in emails)
+                    {
+                        emailMessage.To.Add(new MailboxAddress(ToName, email.Trim()));
+                    }
+                }
+                else
+                {
+                    emailMessage.To.Add(new MailboxAddress(ToName, ToEmail));
+                }                
+                
                 emailMessage.Subject = Subject;
                 //emailMessage.Body = new TextPart("plain") { Text = "I hope you get what you want ya!" };
 
