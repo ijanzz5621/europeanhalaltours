@@ -4,21 +4,17 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;*/
-    font-size: 100px;
-    background: url(/images/logo.jpg) #232323 no-repeat center center fixed;
+    font-size: 100px;    
 }
 
 body {
-    
-    
-    
-
     /*-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;*/
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(/images/logo.jpg) #232323 no-repeat center center fixed;
 }
 
 /* Wrapping element */
