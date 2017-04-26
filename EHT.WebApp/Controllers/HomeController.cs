@@ -20,6 +20,13 @@ namespace EHT.WebApp.Controllers
             return View();
         }
 
+        public IActionResult Intro()
+        {
+            ViewData["Message"] = "Introduction of European Halal Tours";
+
+            return View();
+        }
+
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

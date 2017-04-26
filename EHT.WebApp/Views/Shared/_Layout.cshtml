@@ -23,12 +23,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">European Halal Tours</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    <img src="~/images/small-icon.jpg" width="30" style="float:left; padding-top:0px;" />&nbsp;<span style="float:left;">European Halal Tours</span>
+                </a>
             </div>
+            @*<div style="clear:both;"></div>*@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Intro">Introduction</a></li>
                     <li><a asp-area="" asp-controller="Gallery" asp-action="Index">Gallery</a></li>
                     <li><a asp-area="" asp-controller="Package" asp-action="Index">Packages</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
