@@ -385,6 +385,7 @@ namespace EHT.WebApp.Controllers
             }
 
             //var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
+            //Have to replace  " " with "+" because query string conversion. Add by Sharizan on 05 May 2017 6PM
             var result = await _userManager.ResetPasswordAsync(user, model.Code.Replace(" ", "+"), model.Password);
             if (result.Succeeded)
             {
