@@ -528,6 +528,7 @@ namespace EHT.WebApp.Controllers
             info.Name = model.Name;
             info.Email = model.Email;
             info.PhoneNumber = model.PhoneNumber;
+            info.Remark = model.Remark;
 
             _context.Companies.Add(info);
             _context.SaveChanges();
@@ -539,7 +540,7 @@ namespace EHT.WebApp.Controllers
                     "EuropeanHalalTour Registration",
                     "admin@europeanhalaltour.com;info@europeanhalaltour.com;sales@europeanhalaltour.com;sharizan_81@yahoo.com;sales.ehtours@gmail.com",
                     "Registration Detected",
-                    $"'{ model.Name }' has registered with European Halal Tour. Please contact him/her asap. <br/><br/> Email: '{ model.Email }' <br/> Phone No: '{ model.PhoneNumber }' "
+                    $"'{ model.Name }' has registered with European Halal Tour. Please contact him/her asap. <br/><br/> Email: '{ model.Email }' <br/> Phone No: '{ model.PhoneNumber }' <br/><br/> Remark: '{ model.Remark }' "
                 );
             await funcEmail.SendEmail();
 

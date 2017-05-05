@@ -1,0 +1,57 @@
+﻿@model List<EHT.WebApp.Models.ViewModels.CompanyViewModel>
+
+@{
+
+    ViewData["Title"] = "User Registration Maintenance";
+
+}
+
+<table class="table table-inverse">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Remark</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+
+            if (Model != null && Model.Count > 0)
+            {
+                for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <th scope="row">@Model[i].Name</th>
+                        <td>@Model[i].Email</td>
+                        <td>@Model[i].PhoneNumber</td>
+                        <td>@Model[i].Remark</td>
+                    </tr>
+                }
+            }
+
+
+        }
+
+        @*<tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>twitter</td>
+        </tr>*@
+    </tbody>
+</table>

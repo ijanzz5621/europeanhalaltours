@@ -38,6 +38,15 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="Remark" class="control-label col-xs-2">How can we help you?</label>
+            <div class="col-xs-10">
+                @*<input type="text" class="form-control" id="Remark" placeholder="Please tell us what you want" asp-for="Remark">*@
+                <textarea class="form-control" rows="5" id="Remark" placeholder="Please tell us what you want" asp-for="Remark"></textarea>
+                <span asp-validation-for="Remark" class="text-danger"></span>
+            </div>
+        </div>
+
         @*<div class="form-group">
                 <label for="inputPassword" class="control-label col-xs-2">Password</label>
                 <div class="col-xs-10">

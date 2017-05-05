@@ -18,5 +18,7 @@ namespace EHT.WebApp.Models
         public string Address { get; set; }
         [Required]
         public string Email { get; set; }
+
+        public string Remark { get; set; }
     }
 }

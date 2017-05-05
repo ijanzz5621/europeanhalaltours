@@ -4,16 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EHT.WebApp.Data;
+using EHT.WebApp.Models.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace EHT.WebApp.Controllers
 {
-    public class CompaniesController : Controller
+    public class AdminController : Controller
     {
         private readonly DatabaseDbContext _context;
 
-        public CompaniesController(DatabaseDbContext context)
+        public AdminController(DatabaseDbContext context)
         {
             _context = context;
         }
@@ -21,9 +22,23 @@ namespace EHT.WebApp.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var companies = _context.Companies.ToList();
+            //var companies = _context.Companies.ToList();
+            return View();
+        }
+
+        public IActionResult Company()
+        {
+            var companies = _context.Companies
+                .Select(x => new CompanyViewModel {
+                })
+                .ToList();
 
             return View(companies);
+        }
+
+        public IActionResult Package()
+        {
+            return View();
         }
     }
 }
