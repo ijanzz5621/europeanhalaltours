@@ -1,4 +1,5 @@
-﻿
+﻿@model EHT.WebApp.Models.ViewModels.PackageDetailsViewModel
+
 <link rel="stylesheet" href="~/css/parallax/base.css">
 <link rel="stylesheet" href="~/css/parallax/style.css">
 
@@ -6,7 +7,46 @@
 
     <main>
 
-        <section class="module parallax parallax-1">
+        @{
+
+            if (Model != null && Model.Events.Count > 0)
+            {
+                int paralaxCount = 1;
+
+                for (int i = 0; i < Model.Events.Count; i++)
+                {
+                    <section class="module parallax parallax-@paralaxCount">
+                        <div class="container">
+                            <h1>Day @Model.Events[i].Day</h1>
+                        </div>
+                    </section>
+                    <section class="module content">
+                        <div class="container">
+                            <h2>@Model.Events[i].Title</h2>
+                            <p>
+                                @Model.Events[i].Event
+                            </p>
+                        </div>
+                    </section>
+
+                    if (paralaxCount >= 3)
+                    {
+                        paralaxCount = 1;
+                    }
+                    else
+                    {
+                        paralaxCount++;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
+        @*<section class="module parallax parallax-1">
             <div class="container">
                 <h1>Day 1</h1>
             </div>
@@ -100,7 +140,7 @@
                 <h2>Paris</h2>
                 <p>Today you will visit the famous sites in the City of Paris, 'The City of Lights and Love'. We will introduce you to the metropolis. In the morning we will spend time at the iconic Eiffel Tower which is a beautiful area for walking, sightseeing or simply relaxing. Around lunchtime we will visit the majestic Cathedral Notre Dame, there are plenty of halal restaurants nearby for you to get lunch. Later you will get the chance to shop at one of the top shopping streets in the world at The Champs Ellysees. The Arch de Triumph is located at Champs Ellysees. At the end of the day we will proceed to Paris CDG Airport where our tour ends, and it is time to say farewell to all the friends you have made on tour.</p>
             </div>
-        </section>
+        </section>*@
 
     </main><!-- /main -->    
 

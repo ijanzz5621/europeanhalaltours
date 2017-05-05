@@ -14,10 +14,15 @@ namespace EHT.WebApp.Data
         }
 
         public DbSet<Company> Companies { get; set; }
+        public DbSet<Package> Packages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Company>().ToTable("Company");
+            modelBuilder.Entity<Package>()
+                .ToTable("Package")
+                .HasKey(k => new { k.PackageID, k.Day })
+                ;
         }
     }
 }

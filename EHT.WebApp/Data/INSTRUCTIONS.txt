@@ -4,5 +4,5 @@
 
 2. To apply update of database changes
 
-   dotnet ef database update
+   dotnet ef database update -c DatabaseDbContext
 

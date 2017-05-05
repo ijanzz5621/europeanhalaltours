@@ -8,8 +8,8 @@ using EHT.WebApp.Data;
 namespace EHT.WebApp.Migrations.DatabaseDb
 {
     [DbContext(typeof(DatabaseDbContext))]
-    [Migration("20170423023757_ChangeEmail")]
-    partial class ChangeEmail
+    [Migration("20170505021733_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,19 @@ namespace EHT.WebApp.Migrations.DatabaseDb
                     b.HasKey("ID");
 
                     b.ToTable("Company");
+                });
+
+            modelBuilder.Entity("EHT.WebApp.Models.Database.Package", b =>
+                {
+                    b.Property<string>("PackageID");
+
+                    b.Property<int>("Day");
+
+                    b.Property<string>("Event");
+
+                    b.HasKey("PackageID", "Day");
+
+                    b.ToTable("Package");
                 });
         }
     }

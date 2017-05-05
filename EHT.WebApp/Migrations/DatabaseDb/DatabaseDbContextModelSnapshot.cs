@@ -34,6 +34,21 @@ namespace EHT.WebApp.Migrations.DatabaseDb
 
                     b.ToTable("Company");
                 });
+
+            modelBuilder.Entity("EHT.WebApp.Models.Database.Package", b =>
+                {
+                    b.Property<string>("PackageID");
+
+                    b.Property<int>("Day");
+
+                    b.Property<string>("Event");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("PackageID", "Day");
+
+                    b.ToTable("Package");
+                });
         }
     }
 }
