@@ -291,6 +291,11 @@ namespace EHT.WebApp.Controllers
                 return View("Error");
             }
             var result = await _userManager.ConfirmEmailAsync(user, code);
+
+            //Generate code for user to reset /create new password
+            var resetCode = await _userManager.GeneratePasswordResetTokenAsync(user);
+            ViewBag.ResetCode = resetCode;
+
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
