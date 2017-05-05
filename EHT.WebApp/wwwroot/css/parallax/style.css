@@ -34,9 +34,9 @@ section.module.parallax h1 {
   text-shadow: 0 0 10px white;
 }
 section.module.parallax-1 {
-    /*background-image: url("/images/parallax/demo/pattern1.png");*/
-    background-image: url("/images/gallery/img010.jpg");
-    background-size: cover;
+    background-image: url("/images/parallax/demo/pattern1.png");
+    /*background-image: url("/images/gallery/img010.jpg");
+    background-size: cover;*/
 }
 section.module.parallax-2 {
   background-image: url("/images/parallax/demo/pattern2.png");

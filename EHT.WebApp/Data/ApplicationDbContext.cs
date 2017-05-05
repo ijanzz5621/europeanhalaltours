@@ -23,7 +23,7 @@ namespace EHT.WebApp.Data
             // Add your customizations after calling base.OnModelCreating(builder);
 
             builder.Entity<ApplicationUser>(entity => entity.Property(m => m.Id)
-        .HasMaxLength(255));
+                .HasMaxLength(255));
             builder.Entity<ApplicationUser>(entity => entity.Property(m => m.NormalizedEmail)
                 .HasMaxLength(255));
             builder.Entity<ApplicationUser>(entity => entity.Property(m => m.NormalizedUserName)
