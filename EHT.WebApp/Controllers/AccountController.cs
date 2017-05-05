@@ -292,7 +292,7 @@ namespace EHT.WebApp.Controllers
             }
             var result = await _userManager.ConfirmEmailAsync(user, code);
 
-            //Generate code for user to reset /create new password
+            //Generate code for user to reset / create new password
             var resetCode = await _userManager.GeneratePasswordResetTokenAsync(user);
             ViewBag.ResetCode = resetCode;
 
@@ -383,7 +383,9 @@ namespace EHT.WebApp.Controllers
                 // Don't reveal that the user does not exist
                 return RedirectToAction(nameof(AccountController.ResetPasswordConfirmation), "Account");
             }
-            var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
+
+            //var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
+            var result = await _userManager.ResetPasswordAsync(user, model.Code.Replace(" ", "+"), model.Password);
             if (result.Succeeded)
             {
                 return RedirectToAction(nameof(AccountController.ResetPasswordConfirmation), "Account");
