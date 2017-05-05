@@ -1,0 +1,13 @@
+﻿
+
+
+@if (ViewBag.Result == "ERROR")
+{
+    <span>Failed to create user account. Please check with your system admin.</span>
+
+} else
+{
+    <span>User successfully created.</span>
+    <br /><br />
+    <a href="/Admin/Company"> Back to list </a> 
+}

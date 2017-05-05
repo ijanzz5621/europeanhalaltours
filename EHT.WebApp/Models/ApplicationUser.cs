@@ -11,5 +11,6 @@ namespace EHT.WebApp.Models
     {
         public string CompanyCode { get; set; }
         public string Address { get; set; }
+        public string FullName { get; set; }
     }
 }

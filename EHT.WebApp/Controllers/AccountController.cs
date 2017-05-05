@@ -547,6 +547,52 @@ namespace EHT.WebApp.Controllers
             return View("~/Views/Account/RequestForAccountConfirmation.cshtml");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> CreateAccount(string Email)
+        {
+            //Find user from email
+            Company userData = _context.Companies.Where(x => x.Email == Email).FirstOrDefault();
+            if (userData != null)
+            {
+                //ApplicationUser user = new ApplicationUser();
+                //user.UserName = Email;
+                //user.FullName = userData.Name;
+                //user.Ema
+
+                var user = new ApplicationUser { UserName = Email, Email = Email, CompanyCode = "", Address = "", FullName = userData.Name };
+                var result = await _userManager.CreateAsync(user, "");
+                if (result.Succeeded)
+                {
+                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var callbackUrl = Url.Action(nameof(ConfirmEmail), "Account",
+                        new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+
+                    //await _emailSender.SendEmailAsync(model.Email, "Confirm your account", 
+                    //    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
+
+                    clsFnEmail funcEmail = new clsFnEmail(
+                        "EuropeanHalalTour Admin",
+                        "donotreply@europeanhalaltour.com",
+                        user.Id,
+                        user.Email,
+                        "Confirm your account",
+                        $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>"
+                    );
+                    await funcEmail.SendEmail();
+
+                    ViewBag.Result = "SUCCESS";
+                } else
+                {
+                    ViewBag.Result = "ERROR";
+                }
+            } else
+            {
+                ViewBag.Result = "ERROR";
+            }
+
+            return View();
+        }
+
         #region Helpers
 
         private void AddErrors(IdentityResult result)
