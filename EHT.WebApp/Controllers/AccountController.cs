@@ -554,13 +554,8 @@ namespace EHT.WebApp.Controllers
             Company userData = _context.Companies.Where(x => x.Email == Email).FirstOrDefault();
             if (userData != null)
             {
-                //ApplicationUser user = new ApplicationUser();
-                //user.UserName = Email;
-                //user.FullName = userData.Name;
-                //user.Ema
-
                 var user = new ApplicationUser { UserName = Email, Email = Email, CompanyCode = "", Address = "", FullName = userData.Name };
-                var result = await _userManager.CreateAsync(user, "");
+                var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -591,6 +586,28 @@ namespace EHT.WebApp.Controllers
             }
 
             return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> DeleteAccount()
+        {
+            try
+            {
+                ApplicationUser user = _userManager.FindByEmailAsync("ijanzz5621@gmail.com").Result;
+                if (user != null)
+                {
+                    await _userManager.DeleteAsync(user);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+
+            return View("~/Views/Home/Index.cshtml");
         }
 
         #region Helpers
