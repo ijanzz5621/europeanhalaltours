@@ -1,3 +1,53 @@
-﻿@{
+﻿@model List<EHT.WebApp.Models.ViewModels.PackageViewModel>
+@{
     ViewData["Title"] = "Package Maintenance";
 }
+
+<div style="padding: 15px;">
+
+    <input class="btn btn-info" type="button" value="New Package" onclick="window.location.href='@Url.Action("PackageDetails", "Admin" )';" />
+
+    <hr />
+
+    <table class="table table-responsive table-bordered">
+        <thead>
+            <tr style="background-color:#808080;">
+                <th>Package Name</th>
+                <th>Order Sequence</th>
+                <th>Created By</th>
+                <th>Created On</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+
+                if (Model != null && Model.Count > 0)
+                {
+                    for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <th scope="row">@Model[i].PackageName</th>
+                            <td>@Model[i].OrderSequence</td>
+                            <td>@Model[i].CreatedBy</td>
+                            <td>@Model[i].CreatedOn</td>
+                            <td>                                
+                                <a href="/Admin/PackageDetails?ID=@Model[i].PackageID">Edit</a> &nbsp;|&nbsp; <a href="/Admin/PackageDelete?ID=@Model[i].PackageID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+
+
+            }
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+

@@ -8,9 +8,10 @@ using EHT.WebApp.Data;
 namespace EHT.WebApp.Migrations.DatabaseDb
 {
     [DbContext(typeof(DatabaseDbContext))]
-    partial class DatabaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170506030153_AddOrderSeqInPackage")]
+    partial class AddOrderSeqInPackage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");

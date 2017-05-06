@@ -10,9 +10,11 @@ namespace EHT.WebApp.Models.Database
     {
         //[Key]
         //public int RecId { get; set; }
+        [MaxLength(10)]
         public string PackageID { get; set; }
         public int Day { get; set; }
         public string Event { get; set; }
+        [MaxLength(50)]
         public string Title { get; set; }
     }
 }

@@ -8,9 +8,10 @@ using EHT.WebApp.Data;
 namespace EHT.WebApp.Migrations.DatabaseDb
 {
     [DbContext(typeof(DatabaseDbContext))]
-    partial class DatabaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170506025419_ChangeTableFieldsLength")]
+    partial class ChangeTableFieldsLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
@@ -70,8 +71,6 @@ namespace EHT.WebApp.Migrations.DatabaseDb
                         .HasMaxLength(50);
 
                     b.Property<DateTime>("CreatedOn");
-
-                    b.Property<int>("OrderSequence");
 
                     b.Property<string>("PackageName")
                         .HasMaxLength(50);

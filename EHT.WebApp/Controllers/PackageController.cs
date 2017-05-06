@@ -26,7 +26,17 @@ namespace EHT.WebApp.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            List<PackageViewModel> model = new List<PackageViewModel>();
+            model = _context.PackageMain
+                .OrderBy(x => x.OrderSequence).ThenBy(x => x.PackageName)
+                .Select(x => new PackageViewModel
+                {
+                    PackageID = x.PackageID,
+                    PackageName = x.PackageName
+                })
+                .ToList();
+
+            return View(model);
         }
 
         public IActionResult PackageDetails(string id)

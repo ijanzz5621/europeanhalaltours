@@ -1,0 +1,65 @@
+﻿@model EHT.WebApp.Models.ViewModels.PackageViewModel
+@{
+    ViewData["Title"] = "Edit Package";
+}
+
+<div style="padding: 15px;">
+
+    <form id="postPackage" method="post" action="/Admin/PackageDetails">
+
+        @Html.HiddenFor(model => model.PackageID)
+
+        <div class="form-group">
+            <label for="PackageName">Package Name:</label>
+            <input type="text" class="form-control" id="PackageName" asp-for="PackageName">
+        </div>
+
+        <div class="form-group">
+            <label for="OrderSequence">Order Sequence:</label>
+            <input type="text" class="form-control" id="OrderSequence" asp-for="OrderSequence">
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr style="background-color:#808080;">
+                    <th style="width:80px;">Day</th>
+                    <th style="width:300px;">Title</th>
+                    <th>Event Description</th>     
+                    <th style="width:100px;">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+
+                    if (Model != null && Model.PackageDetails.Count > 0)
+                    {
+                        for (int i = 0; i < Model.PackageDetails.Count; i++)
+                        {
+                            <tr>
+                                <th scope="row">@Html.TextBoxFor(model => model.PackageDetails[i].Day, "", new { @class = "form-control" })</th>
+                                <td>@Html.TextBoxFor(model => model.PackageDetails[i].Title, "", new { @class = "form-control" })</td>
+                                <td>@Html.TextAreaFor(model => model.PackageDetails[i].Event, new { @class = "form-control", @style = "max-width:1000px; height: 150px;" })</td>
+                                <td>
+                                    @if (Model.PackageDetails[i].Day > 0)
+                                    {
+                                        <a href="/Admin/PackageDetails?UserAction=Del&ID=@Model.PackageDetails[i].PackageID&Day=@Model.PackageDetails[i].Day">Delete</a>
+                                    }
+                                    
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                }
+
+            </tbody>
+        </table>
+
+        <button id="btnBack" type="button" class="btn btn-default" onclick="window.location.href='@Url.Action("Package", "Admin" )';">Back</button>
+        &nbsp;
+        <button id="btnSubmit" type="submit" class="btn btn-primary">Save</button>
+
+    </form>
+
+</div>

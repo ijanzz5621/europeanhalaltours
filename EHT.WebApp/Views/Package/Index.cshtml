@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<EHT.WebApp.Models.ViewModels.PackageViewModel>
+@{
     ViewData["Title"] = "Package Information";
 }
 
@@ -13,6 +14,7 @@
 
         .eht-product-list li {
             /*height: 150px;*/
+            height:100px;
             width: 100%;
             padding: 10px;
             cursor:pointer;
@@ -37,24 +39,38 @@
 
 <ul class="eht-product-list">
 
-    <li class="g1" id="d8n74c">
+    @*<li class="g1" id="d8n74c">
         <span style="opacity:1; color:#ffffff;">8 Days and 7 Nights 4 Countries</span>
-        @*<div>
+        <div style="overflow:hidden;">
             <img src="~/images/bg/london01.png" />
-        </div>*@
+        </div>
     </li>
     <li class="g2" id="d8n75c">            
         <span style="opacity:1; color:#ffffff;">8 Days and 7 Nights 5 Countries</span>
-        @*<div>
+        <div style="overflow:hidden;">
             <img src="~/images/bg/london01.png" />
-        </div>*@
+        </div>
     </li>
     <li class="g1" id="d8n76c"><span style="opacity:1; color:#ffffff;">8 Days and 7 Nights 6 Countries</span></li>
     <li class="g2" id="d10n76c"><span style="opacity:1; color:#ffffff;">10 Days and 7 Nights 6 Countries</span></li>
     <li class="g1" id="d11n96c"><span style="opacity:1; color:#ffffff;">11 Days and 9 Nights 6 Countries</span></li>
     <li class="g2" id="d11n106c"><span style="opacity:1; color:#ffffff;">11 Days and 10 Nights 6 Countries (Luxembourgh)</span></li>
     <li class="g1" id="d12n9LA"><span style="opacity:1; color:#ffffff;">12 Days and 9 Nights London - Amsterdam</span></li>
-    <li class="g2" id="ParAm"><span style="opacity:1; color:#ffffff;">Paris - Amsterdam tour</span></li>
+    <li class="g2" id="ParAm"><span style="opacity:1; color:#ffffff;">Paris - Amsterdam tour</span></li>*@
+
+    @if (Model != null && Model.Count > 0)
+    {
+        string classLabel = "g1";
+
+
+        for (int i = 0; i < Model.Count; i++)
+        {
+            classLabel = (i % 2 > 0) ? "g1" : "g2";
+
+            <li class="@classLabel" id="@Model[i].PackageID"><a href="/Package/PackageDetails?id=@Model[i].PackageID"><span style="opacity:1; color:#ffffff;">@Model[i].PackageName</span></a></li>
+        }
+
+    }
 
 </ul>
 
@@ -63,39 +79,6 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-
-            $('#d8n74c').click(function () {
-                location.href = '/Package/PackageDetails?id=d8n74c';
-            });
-
-            $('#d8n75c').click(function () {
-                location.href = '/Package/PackageDetails?id=d8n75c';
-            });
-
-            $('#d8n76c').click(function () {
-                location.href = '/Package/PackageDetails?id=d8n76c';
-            });
-
-            $('#d10n76c').click(function () {
-                location.href = '/Package/PackageDetails?id=d10n76c';
-            });
-
-            $('#d11n96c').click(function () {
-                location.href = '/Package/PackageDetails?id=d11n96c';
-            });
-
-            $('#d11n106c').click(function () {
-                location.href = '/Package/PackageDetails?id=d11n106c';
-            });
-
-            $('#d12n9LA').click(function () {
-                location.href = '/Package/PackageDetails?id=d12n9LA';
-            });
-
-            $('#ParAm').click(function () {
-                location.href = '/Package/PackageDetails?id=ParAm';
-            });
-
         });
 
     </script>

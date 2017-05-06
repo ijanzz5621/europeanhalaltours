@@ -15,6 +15,7 @@ namespace EHT.WebApp.Data
 
         public DbSet<Company> Companies { get; set; }
         public DbSet<Package> Packages { get; set; }
+        public DbSet<PackageMain> PackageMain { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +24,7 @@ namespace EHT.WebApp.Data
                 .ToTable("Package")
                 .HasKey(k => new { k.PackageID, k.Day })
                 ;
+            modelBuilder.Entity<PackageMain>().ToTable("PackageMain");
         }
     }
 }

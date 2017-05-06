@@ -8,9 +8,10 @@ using EHT.WebApp.Data;
 namespace EHT.WebApp.Migrations.DatabaseDb
 {
     [DbContext(typeof(DatabaseDbContext))]
-    partial class DatabaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170506025030_MainPackageTable2")]
+    partial class MainPackageTable2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
@@ -20,23 +21,17 @@ namespace EHT.WebApp.Migrations.DatabaseDb
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Address")
-                        .HasMaxLength(200);
+                    b.Property<string>("Address");
 
-                    b.Property<string>("Code")
-                        .HasMaxLength(20);
+                    b.Property<string>("Code");
 
-                    b.Property<string>("Email")
-                        .HasMaxLength(50);
+                    b.Property<string>("Email");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(50);
+                    b.Property<string>("Name");
 
-                    b.Property<string>("PhoneNumber")
-                        .HasMaxLength(20);
+                    b.Property<string>("PhoneNumber");
 
-                    b.Property<string>("Remark")
-                        .HasMaxLength(500);
+                    b.Property<string>("Remark");
 
                     b.HasKey("ID");
 
@@ -45,15 +40,13 @@ namespace EHT.WebApp.Migrations.DatabaseDb
 
             modelBuilder.Entity("EHT.WebApp.Models.Database.Package", b =>
                 {
-                    b.Property<string>("PackageID")
-                        .HasMaxLength(10);
+                    b.Property<string>("PackageID");
 
                     b.Property<int>("Day");
 
                     b.Property<string>("Event");
 
-                    b.Property<string>("Title")
-                        .HasMaxLength(50);
+                    b.Property<string>("Title");
 
                     b.HasKey("PackageID", "Day");
 
@@ -66,15 +59,11 @@ namespace EHT.WebApp.Migrations.DatabaseDb
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(10);
 
-                    b.Property<string>("CreatedBy")
-                        .HasMaxLength(50);
+                    b.Property<string>("CreatedBy");
 
                     b.Property<DateTime>("CreatedOn");
 
-                    b.Property<int>("OrderSequence");
-
-                    b.Property<string>("PackageName")
-                        .HasMaxLength(50);
+                    b.Property<string>("PackageName");
 
                     b.HasKey("PackageID");
 
