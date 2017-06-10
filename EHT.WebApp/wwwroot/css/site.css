@@ -26,7 +26,7 @@ body {
 
 .container-full {
     margin: 0 auto;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -34,6 +34,17 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.carousel{
+    margin:10px auto;
+    padding:0px;
+    max-height:380px;
+    overflow:hidden;
+}
+
+.carousel-control{
+    background-color:transparent;
 }
 
 /* Carousel */
